@@ -1,4 +1,4 @@
-package mvcflow.RESTmvc.Service;
+package mvcflow.RESTmvc.Model.Service;
 
 import mvcflow.RESTmvc.Controller.Employee;
 import org.springframework.stereotype.Service;
