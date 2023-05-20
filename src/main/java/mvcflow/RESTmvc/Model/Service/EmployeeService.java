@@ -1,21 +1,26 @@
 package mvcflow.RESTmvc.Model.Service;
 
-import mvcflow.RESTmvc.Controller.Employee;
+import mvcflow.RESTmvc.Model.Entity.EmployeeEntity;
+import mvcflow.RESTmvc.Model.Repository.EmployeeRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Arrays;
+
 import java.util.List;
+
 
 @Service
 public class EmployeeService {
+ private EmployeeRepository employeeRepository;
 
- private List <Employee> employees = Arrays.asList(
-         new Employee ("Daphne", "Ruth"),
-         new Employee ("Chebet", "Sang"),
-         new Employee("John", "mualuko")
- );
- public List <Employee> getAllEmployees(){
-  return employees;
+ @Autowired
+ public EmployeeService(EmployeeRepository employeeRepository) {
+  this.employeeRepository = employeeRepository;
+ }
+
+ public List<EmployeeEntity> getAllEmployees() {
+  List<EmployeeEntity> all = employeeRepository.findAll();
+  return all;
  }
 
 }
