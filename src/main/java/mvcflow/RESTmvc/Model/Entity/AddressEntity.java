@@ -24,5 +24,8 @@ public class AddressEntity {
     private String city;
     private String state;
 
+    @ManyToOne
+
+    private EmployeeEntity employee;
 
 }

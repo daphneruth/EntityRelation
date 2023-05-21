@@ -34,9 +34,11 @@ public class EmployeeEntity {
 //        this.addressEntity = addressEntity;
 //    }
 
-
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "foregn_id", referencedColumnName = "id")
-    private List <EmployeeEntity> employee;
-
+//
+//    @OneToMany(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "foregn_id", referencedColumnName = "id")
+//    private List <EmployeeEntity> employee;
+  @OneToMany(cascade = CascadeType.ALL)
+   @JoinColumn(name = "foreign_id",referencedColumnName = "id")
+    private List<AddressEntity> address;
 }
