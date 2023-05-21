@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Entity
 @Transactional
@@ -23,10 +24,5 @@ public class AddressEntity {
     private String city;
     private String state;
 
-    // One-to-one
-    @OneToOne
-    private EmployeeEntity employee;
 
-    // Constructors, getters, and setters
-    // ...
 }
