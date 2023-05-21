@@ -1,58 +1,37 @@
 package mvcflow.RESTmvc.Model.Entity;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import javax.transaction.Transactional;
+
 @Data
 @Entity
+@Transactional
+@NoArgsConstructor
+@Table(name = "employee_entity")
 public class EmployeeEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-
+     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
     private Integer id;
     private String firstName;
     private String lastName;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    //@JoinColumn(name = "fk_add_id")
+    private AddressEntity Address;
 
-    // Constructors, getters, and setters
 
+    @OneToOne(optional = false)
+    private AddressEntity addressEntity;
 
-//    public EmployeeEntity(Integer id, String firstName, String lastName) {
-//        this.id = id;
-//        this.firstName = firstName;
-//        this.lastName = lastName;
-//  }
-//
-//
-//    //Getters and Setters
-//
-//    public int getId() {
-//        return id;
-//    }
-//
-//
-//
-//    public String getLastName() {
-//        return lastName;
-//    }
-//
-//    public void setLastName(String lastName) {
-//        this.lastName = lastName;
-//    }
-//
-//    public String getFirstName() {
-//        return firstName;
-//    }
-//
-//    public void setFirstName(String firstName) {
-//        this.firstName = firstName;
-//    }
-//
-//}
-//
-//
-//
+    public AddressEntity getAddressEntity() {
+        return addressEntity;
+    }
+
+    public void setAddressEntity(AddressEntity addressEntity) {
+        this.addressEntity = addressEntity;
+    }
 }
