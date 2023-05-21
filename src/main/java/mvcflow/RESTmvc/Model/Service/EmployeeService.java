@@ -1,26 +1,15 @@
 package mvcflow.RESTmvc.Model.Service;
 
 import mvcflow.RESTmvc.Model.Entity.EmployeeEntity;
-import mvcflow.RESTmvc.Model.Repository.EmployeeRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 
 import java.util.List;
 
+public interface EmployeeService {
+ public Integer saveEmployee(EmployeeEntity employee);
 
-@Service
-public class EmployeeService {
- private EmployeeRepository employeeRepository;
+ public List<EmployeeEntity> getAllEmployees();
 
- @Autowired
- public EmployeeService(EmployeeRepository employeeRepository) {
-  this.employeeRepository = employeeRepository;
- }
+ public EmployeeEntity getEmployeeById(Integer id);
 
- public List<EmployeeEntity> getAllEmployees() {
-  List<EmployeeEntity> all = employeeRepository.findAll();
-  return all;
- }
-
+ public void deleteEmployee(Integer id);
 }
