@@ -29,14 +29,14 @@ public class EmployeeEntity {
 
     private String lastName;
 
+//Entity relation:One To One
+//    @OneToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "foreign_id")
+//    private AddressEntity address;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "foreign_id")
-    private AddressEntity address;
 
 
-
-//  @OneToMany(cascade = CascadeType.ALL)
-//   @JoinColumn(name = "foreign_id",referencedColumnName = "id")
-//    private List<AddressEntity> address;
+  @OneToMany(cascade = CascadeType.ALL)
+   @JoinColumn(name = "foreign_id",referencedColumnName = "id")
+    private List<AddressEntity> address;
 }

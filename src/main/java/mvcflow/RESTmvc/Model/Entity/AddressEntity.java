@@ -24,8 +24,9 @@ public class AddressEntity {
     private String city;
     private String state;
 
-    @OneToOne(mappedBy = "address")
 
-    private EmployeeEntity employee;
+//    @OneToOne(mappedBy = "address")
+//    private EmployeeEntity employee;
+
 
 }
