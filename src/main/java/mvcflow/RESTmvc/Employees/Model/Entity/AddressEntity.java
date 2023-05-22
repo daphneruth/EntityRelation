@@ -1,4 +1,4 @@
-package mvcflow.RESTmvc.Model.Entity;
+package mvcflow.RESTmvc.Employees.Model.Entity;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

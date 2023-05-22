@@ -1,6 +1,6 @@
-package mvcflow.RESTmvc.Model.Service;
+package mvcflow.RESTmvc.Employees.Model.Service;
 
-import mvcflow.RESTmvc.Model.Entity.EmployeeEntity;
+import mvcflow.RESTmvc.Employees.Model.Entity.EmployeeEntity;
 
 import java.util.List;
 

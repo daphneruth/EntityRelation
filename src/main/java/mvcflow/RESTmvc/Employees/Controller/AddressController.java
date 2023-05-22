@@ -1,8 +1,8 @@
-package mvcflow.RESTmvc.Controller;
+package mvcflow.RESTmvc.Employees.Controller;
 
 
-import mvcflow.RESTmvc.Model.Repository.AddressRepository;
-import mvcflow.RESTmvc.Model.Entity.AddressEntity;
+import mvcflow.RESTmvc.Employees.Model.Repository.AddressRepository;
+import mvcflow.RESTmvc.Employees.Model.Entity.AddressEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

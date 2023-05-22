@@ -1,11 +1,14 @@
-package mvcflow.RESTmvc.Model.Entity;
+package mvcflow.RESTmvc.Employees.Model.Entity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import mvcflow.RESTmvc.Project.Model.Entity.ProjectEntity;
 
 import javax.persistence.*;
 import javax.transaction.Transactional;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Data
 @Entity
@@ -35,8 +38,17 @@ public class EmployeeEntity {
 //    private AddressEntity address;
 
 
+//
+//  @OneToMany(cascade = CascadeType.ALL)
+//   @JoinColumn(name = "foreign_id",referencedColumnName = "id")
+//    private List<AddressEntity> address;
 
-  @OneToMany(cascade = CascadeType.ALL)
-   @JoinColumn(name = "foreign_id",referencedColumnName = "id")
-    private List<AddressEntity> address;
+
+    @ManyToMany
+    @JoinTable(
+
+            joinColumns = @JoinColumn(name = "id"),
+            inverseJoinColumns = @JoinColumn(name = "project_id")
+    )
+    private Set<ProjectEntity> assignedProjects = new HashSet<>();
 }

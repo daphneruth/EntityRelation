@@ -1,9 +1,9 @@
-package mvcflow.RESTmvc.Controller;
+package mvcflow.RESTmvc.Employees.Controller;
 
 
 import io.swagger.annotations.Api;
-import mvcflow.RESTmvc.Model.Entity.EmployeeEntity;
-import mvcflow.RESTmvc.Model.Service.EmployeeService;
+import mvcflow.RESTmvc.Employees.Model.Entity.EmployeeEntity;
+import mvcflow.RESTmvc.Employees.Model.Service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -20,7 +20,6 @@ import java.util.List;
 
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 
 
 @RestController

@@ -1,6 +1,6 @@
-package mvcflow.RESTmvc.Model.Repository;
+package mvcflow.RESTmvc.Employees.Model.Repository;
 
-import mvcflow.RESTmvc.Model.Entity.EmployeeEntity;
+import mvcflow.RESTmvc.Employees.Model.Entity.EmployeeEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,7 +1,6 @@
-package mvcflow.RESTmvc.Model.Repository;
+package mvcflow.RESTmvc.Employees.Model.Repository;
 
-import mvcflow.RESTmvc.Model.Entity.AddressEntity;
-import mvcflow.RESTmvc.Model.Entity.EmployeeEntity;
+import mvcflow.RESTmvc.Employees.Model.Entity.AddressEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface AddressRepository extends JpaRepository<AddressEntity, Integer> {
