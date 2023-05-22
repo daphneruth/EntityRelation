@@ -30,12 +30,12 @@ public class EmployeeEntity {
     private String lastName;
 
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "foreign_id")
+    private AddressEntity address;
 
-//
-//    @OneToOne(optional = false)
-//    private AddressEntity addressEntity;
 
-//    public Addre
+
 //  @OneToMany(cascade = CascadeType.ALL)
 //   @JoinColumn(name = "foreign_id",referencedColumnName = "id")
 //    private List<AddressEntity> address;
