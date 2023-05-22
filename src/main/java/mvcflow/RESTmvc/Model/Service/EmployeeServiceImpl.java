@@ -1,6 +1,7 @@
 package mvcflow.RESTmvc.Model.Service;
 
 import mvcflow.RESTmvc.Model.Entity.EmployeeEntity;
+import mvcflow.RESTmvc.Model.Repository.AddressRepository;
 import mvcflow.RESTmvc.Model.Repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,6 +15,9 @@ import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
 public class EmployeeServiceImpl implements EmployeeService {
     @Autowired
     private  EmployeeRepository employeeRepository;
+
+    @Autowired
+    private AddressRepository  addressRepository;
 
     @Autowired
   public EmployeeServiceImpl(EmployeeRepository employeeRepository) {

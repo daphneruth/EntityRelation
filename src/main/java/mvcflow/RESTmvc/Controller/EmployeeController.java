@@ -2,11 +2,11 @@ package mvcflow.RESTmvc.Controller;
 
 
 import io.swagger.annotations.Api;
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import mvcflow.RESTmvc.Model.Entity.EmployeeEntity;
 import mvcflow.RESTmvc.Model.Service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,6 +20,7 @@ import java.util.List;
 
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 
 
 @RestController
@@ -29,8 +30,9 @@ public class EmployeeController {
     @Autowired
     private EmployeeService employeeService;
 
-    @PostMapping("/saveEmployee")
-    public ResponseEntity<String> saveEmployee(@RequestBody EmployeeEntity employee) {
+    @PostMapping( "/saveEmployee")
+    public ResponseEntity<String> saveEmployee( @RequestBody EmployeeEntity employee) {
+        System.out.println(employee.getLastName());
         Integer id = employeeService.saveEmployee(employee);
         return new ResponseEntity<>("Employee with ID '" + id + "' has been saved", HttpStatus.OK);
     }

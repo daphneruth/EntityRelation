@@ -1,4 +1,5 @@
 package mvcflow.RESTmvc.Model.Entity;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -16,8 +17,16 @@ public class EmployeeEntity {
     @Id
      @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
+
     private Integer id;
+
+    @Column(nullable = false)
+
+
     private String firstName;
+
+    @Column(nullable = false)
+
     private String lastName;
 
 
@@ -26,19 +35,8 @@ public class EmployeeEntity {
 //    @OneToOne(optional = false)
 //    private AddressEntity addressEntity;
 
-//    public AddressEntity getAddressEntity() {
-//        return addressEntity;
-//    }
-//
-//    public void setAddressEntity(AddressEntity addressEntity) {
-//        this.addressEntity = addressEntity;
-//    }
-
-//
-//    @OneToMany(cascade = CascadeType.ALL)
-//    @JoinColumn(name = "foregn_id", referencedColumnName = "id")
-//    private List <EmployeeEntity> employee;
-  @OneToMany(cascade = CascadeType.ALL)
-   @JoinColumn(name = "foreign_id",referencedColumnName = "id")
-    private List<AddressEntity> address;
+//    public Addre
+//  @OneToMany(cascade = CascadeType.ALL)
+//   @JoinColumn(name = "foreign_id",referencedColumnName = "id")
+//    private List<AddressEntity> address;
 }
